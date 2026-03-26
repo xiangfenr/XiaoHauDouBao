@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.kapt'
+    id 'maven-publish'
 }
 
 android {
@@ -23,6 +24,20 @@ android {
 
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+
+                groupId = 'com.github.xiangfenr'
+                artifactId = 'core'
+                version = '1.0.0'
+            }
+        }
     }
 }
 
