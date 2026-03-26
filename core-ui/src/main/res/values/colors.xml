@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="dialog_color_txt">#333333</color><!--弹窗文案颜色-->
+    <color name="dialog_color_confirm">#ff4848</color><!--弹窗确认按钮颜色-->
+    <color name="normalColor">#353A3E</color>
+    <color name="defaultTextColor">#FFFFFF</color>
+    <color name="color_f5f5f5">#f5f5f5</color><!--整体背景-->
+    <color name="color_txt">#333333</color><!--主文字颜色-->
+    <color name="color_txt2">#808080</color><!--主文字颜色-->
+    <color name="dark_color_divide">#cccccc</color>
+    <color name="c_000000">#000000</color>
+    <color name="colorPrimary">#EE843A</color>
+    <!--弹窗底色-->
+    <!--弹窗输入框提示文字颜色-->
+    <color name="color_ffffff">#ffffff</color><!--模块底色-->
+    <color name="BottomMenuText">#0070ff</color>
+    <color name="ps_color_grey">#393a3e</color>
+    <color name="ps_color_white">#FFFFFF</color>
+    <color name="gray">#99000000</color>
+    <color name="main_color">#FE7122</color>
+    <color name="main_color2">#FCA242</color>
+    <color name="main_color3">#1015B8A6</color>
+    <color name="c_000">#000000</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_9A9A9A">#9A9A9A</color>
+    <color name="c_E5E5E5">#E5E5E5</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_f7f7f7">#f7f7f7</color>
+    <color name="c_ff">#ffffffff</color>
+    <color name="color_f0f0f0">#F5F5FA</color>
+    <color name="c_20">#201e2e</color>
+
+    <color name="line_color">#e7e7e7</color>
+    <color name="content_background">#f2f2f2</color>
+    <color name="solar_background">#009988</color>
+
+</resources>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/d_dp_20"
+    android:layout_marginEnd="@dimen/d_dp_20">
+
+    <TextView
+        android:id="@+id/tv_dialog_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/d_dp_30"
+        android:layout_marginTop="@dimen/d_dp_26"
+        android:gravity="center"
+        android:text="提示"
+        android:textColor="@color/dialog_color_txt"
+        android:textSize="@dimen/d_sp_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/d_dp_24"
+        android:layout_marginTop="@dimen/d_dp_15"
+        android:layout_marginEnd="@dimen/d_dp_24"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="@dimen/d_dp_4"
+        android:textColor="@color/dialog_color_txt"
+        android:textSize="@dimen/d_sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_tip"
+        tools:text="这是一段提示" />
+
+    <View
+        android:id="@+id/top_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_dp_05"
+        android:layout_marginTop="@dimen/d_dp_25"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_title" />
+
+    <TextView
+        android:id="@+id/dialog_cancel"
+        android:layout_width="@dimen/d_dp_0"
+        android:layout_height="@dimen/d_dp_50"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/dialog_color_txt"
+        android:textSize="@dimen/d_sp_15"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/dialog_confirm"
+        app:layout_constraintTop_toBottomOf="@+id/top_line" />
+
+    <View
+        android:layout_width="@dimen/d_dp_05"
+        android:layout_height="@dimen/d_dp_50"
+        app:layout_constraintLeft_toRightOf="@+id/dialog_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/top_line" />
+
+    <TextView
+        android:id="@+id/dialog_confirm"
+        android:layout_width="@dimen/d_dp_0"
+        android:layout_height="@dimen/d_dp_50"
+        android:gravity="center"
+        android:text="确认"
+        android:textColor="@color/dialog_color_confirm"
+        android:textSize="@dimen/d_sp_15"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toRightOf="@+id/dialog_cancel"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_line" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

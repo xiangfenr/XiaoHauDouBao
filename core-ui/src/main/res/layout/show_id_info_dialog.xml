@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_list_bg"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/d_dp_20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="提示"
+            android:textColor="@color/c_000000"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/privacyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:text="为完成您的实名认证及业务办理，我们需要收集您的身份证信息。该信息仅用于：
+        \n 1.共享前提：仅在获得您单独明示同意后，向合规合作方共享必要信息；
+        \n2.共享内容：姓名、身份证号、借款相关信息及加密后的 Android ID、OAID；
+        \n3.共享目的：借款风险审核、信用评估及交易安全保障；
+        \n我们承诺严格保护您的个人信息，不会用于其他无关用途。"
+            android:textColor="@color/c_000000"
+            android:textSize="@dimen/d_sp_16"
+            android:visibility="visible" />
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_dp_200"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_20"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textSize="@dimen/d_sp_14" />
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/d_dp_8">
+
+            <TextView
+                android:id="@+id/tv_agree"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginHorizontal="20dp"
+                android:gravity="center"
+                android:text="我已知晓"
+                android:textColor="@color/main_color"
+                android:textSize="16dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

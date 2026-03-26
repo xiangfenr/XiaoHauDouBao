@@ -1,0 +1,41 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        app:elevation="1dp"
+        app:layout_scrollFlags="scroll">
+
+        <include layout="@layout/toolbar_actionbar" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/d_dp_05"
+            android:background="@color/dark_color_divide"
+            android:visibility="gone" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBarLayout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ViewStub
+            android:id="@+id/center_common"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

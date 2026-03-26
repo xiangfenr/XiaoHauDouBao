@@ -1,0 +1,609 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">小花逗包</string>
+    <string name="app_icp">京ICP备2025155722号</string>
+    <string name="app_gongsi">华森缘（北京）科技有限公司</string>
+
+
+    <string name="pickerview_submit">确定</string>
+    <string name="pickerview_cancel">取消</string>
+
+
+    <string-array name="lunar_first_of_month">
+        <item>春节</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>冬月</item>
+        <item>腊月</item>
+    </string-array>
+
+    <string-array name="tradition_festival">
+        <item>除夕</item>
+        <item>0101春节</item>
+        <item>0115元宵</item>
+        <item>0505端午</item>
+        <item>0707七夕</item>
+        <item>0815中秋</item>
+        <item>0909重阳</item>
+    </string-array>
+
+    <string-array name="lunar_str">
+        <item>初一</item>
+        <item>初二</item>
+        <item>初三</item>
+        <item>初四</item>
+        <item>初五</item>
+        <item>初六</item>
+        <item>初七</item>
+        <item>初八</item>
+        <item>初九</item>
+        <item>初十</item>
+        <item>十一</item>
+        <item>十二</item>
+        <item>十三</item>
+        <item>十四</item>
+        <item>十五</item>
+        <item>十六</item>
+        <item>十七</item>
+        <item>十八</item>
+        <item>十九</item>
+        <item>二十</item>
+        <item>廿一</item>
+        <item>廿二</item>
+        <item>廿三</item>
+        <item>廿四</item>
+        <item>廿五</item>
+        <item>廿六</item>
+        <item>廿七</item>
+        <item>廿八</item>
+        <item>廿九</item>
+        <item>三十</item>
+    </string-array>
+
+    <string-array name="solar_festival" tools:ignore="InconsistentArrays">
+        <item>0101元旦</item>
+        <item>0214情人节</item>
+        <item>0308妇女节</item>
+        <item>0312植树节</item>
+        <item>0315消权日</item>
+        <item>0401愚人节</item>
+        <item>0422地球日</item>
+        <item>0501劳动节</item>
+        <item>0504青年节</item>
+        <item>0601儿童节</item>
+        <item>0701建党节</item>
+        <item>0801建军节</item>
+        <item>0910教师节</item>
+        <item>1001国庆节</item>
+        <item>1031万圣节</item>
+        <item>1111光棍节</item>
+        <item>1224平安夜</item>
+        <item>1225圣诞节</item>
+    </string-array>
+
+    <string-array name="solar_term">
+        <item>春分</item>
+        <item>清明</item>
+        <item>谷雨</item>
+        <item>立夏</item>
+        <item>小满</item>
+        <item>芒种</item>
+        <item>夏至</item>
+        <item>小暑</item>
+        <item>大暑</item>
+        <item>立秋</item>
+        <item>处暑</item>
+        <item>白露</item>
+        <item>秋分</item>
+        <item>寒露</item>
+        <item>霜降</item>
+        <item>立冬</item>
+        <item>小雪</item>
+        <item>大雪</item>
+        <item>冬至</item>
+        <item>小寒</item>
+        <item>大寒</item>
+        <item>立春</item>
+        <item>雨水</item>
+        <item>惊蛰</item>
+    </string-array>
+
+    <string-array name="special_festivals">
+        <item>母亲节</item>
+        <item>父亲节</item>
+        <item>感恩节</item>
+    </string-array>
+
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+
+    <string-array name="week_string_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+    <string-array name="year_view_week_string_array">
+        <item>S</item>
+        <item>M</item>
+        <item>T</item>
+        <item>W</item>
+        <item>T</item>
+        <item>F</item>
+        <item>S</item>
+    </string-array>
+
+    <string-array name="month_string_array">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JUL</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
+
+    <integer-array name="trunk_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+    </integer-array>
+
+    <string-array name="trunk_string_array">
+        <item>辛</item>
+        <item>壬</item>
+        <item>癸</item>
+        <item>甲</item>
+        <item>乙</item>
+        <item>丙</item>
+        <item>丁</item>
+        <item>戊</item>
+        <item>己</item>
+        <item>庚</item>
+    </string-array>
+
+    <integer-array name="branch_integer_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </integer-array>
+
+    <string-array name="branch_string_array">
+        <item>酉</item>
+        <item>戌</item>
+        <item>亥</item>
+        <item>子</item>
+        <item>丑</item>
+        <item>寅</item>
+        <item>卯</item>
+        <item>辰</item>
+        <item>巳</item>
+        <item>午</item>
+        <item>未</item>
+        <item>申</item>
+
+    </string-array>
+
+    <string name="flyme">Flyme手机日历</string>
+    <string name="flyme_desc">国内手机日历风格，自动选择第一天</string>
+
+    <string name="custom_china">精美定制中国风</string>
+    <string name="custom_china_desc">周末变色、圆点事件+文本标记</string>
+
+    <string name="mix">Mix错位风格</string>
+    <string name="mix_desc">Mix错位风格</string>
+
+    <string name="full">全屏风格</string>
+    <string name="full_desc">如果你需要的话，分分钟的事</string>
+
+    <string name="range">范围选择</string>
+    <string name="range_desc">如果你需要范围选择的日历</string>
+
+    <string name="multi">多选风格</string>
+    <string name="multi_desc">如果你需要多选风格的日历</string>
+
+    <string name="colorful">多彩风格</string>
+    <string name="colorful_desc">取决于你怎么绘制</string>
+
+    <string name="view_pager">ViewPager风格</string>
+    <string name="view_pager_desc">如果内容是ViewPager的话</string>
+
+    <string name="single">单选风格</string>
+    <string name="single_desc">单选风格是比较受欢迎</string>
+
+    <string name="progress">进度条风格</string>
+    <string name="progress_desc">如果你正在开发todo APP的话</string>
+
+    <string name="index">下标订阅风格</string>
+    <string name="index_desc">只要你想画，就能画</string>
+
+    <string name="galaxy">星系风格</string>
+    <string name="galaxy_desc">很简单就能定制</string>
+
+    <string name="simple">简单风格</string>
+    <string name="simple_desc">这是最简单的日历</string>
+
+    <string-array name="english_week_string_array">
+        <item>Sun</item>
+        <item>Mon</item>
+        <item>Tue</item>
+        <item>Wed</item>
+        <item>Thu</item>
+        <item>Fri</item>
+        <item>Sat</item>
+    </string-array>
+
+    <string-array name="chinese_week_string_array">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+
+    <string name="list_dialog_title">Dynamic Update</string>
+
+    <string name="func_dialog_title">Function</string>
+
+    <string-array name="func_dialog_items">
+        <item>Expand CalendarLayout</item>
+        <item>Shrink CalendarLayout</item>
+        <item>scrollToPre</item>
+        <item>scrollToNext</item>
+        <item>scrollToCurrent</item>
+        <item>Limit calendar range</item>
+        <item>Show range</item>
+    </string-array>
+
+    <string-array name="list_dialog_items">
+        <item>Change week start with sun</item>
+        <item>Change week start with mon</item>
+        <item>Change week start with sat</item>
+        <item>Change select mode：single/default</item>
+        <item>Change month and week view with CustomView</item>
+        <item>MonthViewShowMode：all</item>
+        <item>MonthViewShowMode：only_current</item>
+        <item>MonthViewShowMode：fix</item>
+    </string-array>
+
+    <string name="junk_lzhbza0">khutpa0</string>
+    <string name="junk_bkkaab1">dpvfdb1</string>
+    <string name="junk_ooyzcc2">iaagpc2</string>
+    <string name="junk_wupbwd3">tahhnd3</string>
+    <string name="junk_opmnge4">fybkze4</string>
+    <string name="junk_zjjosf5">aysvwf5</string>
+    <string name="junk_tbyudg6">bfawag6</string>
+    <string name="junk_cqdwph7">twearh7</string>
+    <string name="junk_okhvwi8">dzhwei8</string>
+    <string name="junk_nfexbj9">svkatj9</string>
+    <string name="junk_pxqykk10">lcqclk10</string>
+    <string name="junk_ybpual11">uscsul11</string>
+    <string name="junk_mnqfwm12">rtmxom12</string>
+    <string name="junk_mccwfn13">vbgmxn13</string>
+    <string name="junk_fazxgo14">xudito14</string>
+    <string name="junk_rzgikp15">jttuvp15</string>
+    <string name="junk_gcyyjq16">eudmmq16</string>
+    <string name="junk_xvkwsr17">zkgsur17</string>
+    <string name="junk_lrdyks18">hvnaos18</string>
+    <string name="junk_gtobat19">agxllt19</string>
+    <string name="junk_tqmciu20">mlezhu20</string>
+    <string name="junk_boqmlv21">uatvhv21</string>
+    <string name="junk_fgsoaw22">gpiujw22</string>
+    <string name="junk_afhjix23">zakmfx23</string>
+    <string name="junk_bbtoey24">jxxyyy24</string>
+    <string name="junk_fhzbfz25">uqmlrz25</string>
+    <string name="junk_byuxrab26">glvblab26</string>
+    <string name="junk_gwewybb27">wcnxnbb27</string>
+    <string name="junk_zmzkacb28">zbvidcb28</string>
+    <string name="junk_hsegrdb29">fpnojdb29</string>
+    <string name="junk_yynlkeb30">jhrlceb30</string>
+    <string name="junk_rlotmfb31">pbaeefb31</string>
+    <string name="junk_lerlagb32">atsqxgb32</string>
+    <string name="junk_phqtghb33">ipldahb33</string>
+    <string name="junk_mvgbpib34">lltuyib34</string>
+    <string name="junk_haduvjb35">timinjb35</string>
+    <string name="junk_fjgtqkb36">lfhtqkb36</string>
+    <string name="junk_enolelb37">trhqqlb37</string>
+    <string name="junk_kbopbmb38">gzdismb38</string>
+    <string name="junk_ojukunb39">vuywrnb39</string>
+    <string name="junk_tpftbob40">kvssvob40</string>
+    <string name="junk_azeclpb41">hnxsnpb41</string>
+    <string name="junk_ucjcaqb42">lgizxqb42</string>
+    <string name="junk_omynmrb43">jcqjorb43</string>
+    <string name="junk_xgdnnsb44">tmaxusb44</string>
+    <string name="junk_hqbyhtb45">sxczytb45</string>
+    <string name="junk_thppwub46">bpxduub46</string>
+    <string name="junk_cxezrvb47">yqyjivb47</string>
+    <string name="junk_ftrvrwb48">yxddowb48</string>
+    <string name="junk_iptjaxb49">qugmmxb49</string>
+    <string name="junk_djgisyb50">jyzwcyb50</string>
+    <string name="junk_wkgvhzb51">qidcizb51</string>
+    <string name="junk_bbyylac52">fuvrsac52</string>
+    <string name="junk_hdulebc53">jzvivbc53</string>
+    <string name="junk_apnducc54">tzkubcc54</string>
+    <string name="junk_nivdedc55">bauhddc55</string>
+    <string name="junk_jogulec56">hoofjec56</string>
+    <string name="junk_zytewfc57">diaiwfc57</string>
+    <string name="junk_zkhkcgc58">sfoeggc58</string>
+    <string name="junk_xrrmfhc59">kkgcqhc59</string>
+    <string name="junk_caqpeic60">fncvtic60</string>
+    <string name="junk_iwmqxjc61">yeubjjc61</string>
+    <string name="junk_gpqcjkc62">ukccskc62</string>
+    <string name="junk_zdubylc63">ruiamlc63</string>
+    <string name="junk_fcorrmc64">rvypumc64</string>
+    <string name="junk_xjyhtnc65">zlmhxnc65</string>
+    <string name="junk_nombhoc66">hqlkvoc66</string>
+    <string name="junk_xlxgzpc67">ciqeepc67</string>
+    <string name="junk_fyilpqc68">uehrkqc68</string>
+    <string name="junk_lrcsnrc69">ztbatrc69</string>
+    <string name="junk_efdwksc70">ilmgnsc70</string>
+    <string name="junk_skmxwtc71">imlzrtc71</string>
+    <string name="junk_pzotmuc72">nwosbuc72</string>
+    <string name="junk_cxbowvc73">tyxdvvc73</string>
+    <string name="junk_dkxzjwc74">ojowuwc74</string>
+    <string name="junk_sgzpnxc75">swkddxc75</string>
+    <string name="junk_owgrfyc76">fscnayc76</string>
+    <string name="junk_asivkzc77">eabmgzc77</string>
+    <string name="junk_qtzprad78">nrwvyad78</string>
+    <string name="junk_ntpfnbd79">mnlgwbd79</string>
+    <string name="junk_xwuwlcd80">szlwzcd80</string>
+    <string name="junk_kqmsadd81">qnciodd81</string>
+    <string name="junk_vpjtwed82">lcurred82</string>
+    <string name="junk_ppapzfd83">jpcpifd83</string>
+    <string name="junk_lecxogd84">haxfpgd84</string>
+    <string name="junk_lwoqfhd85">yzbanhd85</string>
+    <string name="junk_snlzuid86">ytmgzid86</string>
+    <string name="junk_wxpsmjd87">efnhcjd87</string>
+    <string name="junk_jlwppkd88">fxzbxkd88</string>
+    <string name="junk_uurgyld89">nlyrqld89</string>
+    <string name="junk_pnwizmd90">nkhhumd90</string>
+    <string name="junk_rplirnd91">qwwwind91</string>
+    <string name="junk_uotmjod92">kqbeaod92</string>
+    <string name="junk_xttuhpd93">uthlmpd93</string>
+    <string name="junk_igfabqd94">howltqd94</string>
+    <string name="junk_kzbjmrd95">kfjsfrd95</string>
+    <string name="junk_wovelsd96">azbqhsd96</string>
+    <string name="junk_fvhdctd97">xwrrotd97</string>
+    <string name="junk_zspekud98">joqmvud98</string>
+    <string name="junk_rmhrjvd99">gemfjvd99</string>
+    <string name="junk_hlhigwd100">dkvyhwd100</string>
+    <string name="junk_ysokpxd101">rghlnxd101</string>
+    <string name="junk_vgxeqyd102">rifdnyd102</string>
+    <string name="junk_ojqcqzd103">dsazmzd103</string>
+    <string name="junk_emipnae104">jwhcxae104</string>
+    <string name="junk_kwfuibe105">rhqkobe105</string>
+    <string name="junk_ljldace106">jccrlce106</string>
+    <string name="junk_tcekgde107">uyoujde107</string>
+    <string name="junk_yomdvee108">otqwuee108</string>
+    <string name="junk_yajkkfe109">uybwlfe109</string>
+    <string name="junk_qoxwnge110">aqhvcge110</string>
+    <string name="junk_xeaedhe111">xcmzjhe111</string>
+    <string name="junk_wuscuie112">oewsnie112</string>
+    <string name="junk_kcbtwje113">whzeaje113</string>
+    <string name="junk_pojjkke114">npdbgke114</string>
+    <string name="junk_cgdgtle115">skaorle115</string>
+    <string name="junk_chjyjme116">ggidcme116</string>
+    <string name="junk_kckoune117">zijxene117</string>
+    <string name="junk_ydoewoe118">hctyaoe118</string>
+    <string name="junk_rpueype119">lbljtpe119</string>
+    <string name="junk_uemjoqe120">zopcyqe120</string>
+    <string name="junk_aqovpre121">hlnbgre121</string>
+    <string name="junk_qvoeese122">zxvmtse122</string>
+    <string name="junk_ebulgte123">tevznte123</string>
+    <string name="junk_kdtmdue124">jitqdue124</string>
+    <string name="junk_jdzvuve125">dnxkxve125</string>
+    <string name="junk_toyutwe126">ifinowe126</string>
+    <string name="junk_uciqgxe127">pkhakxe127</string>
+    <string name="junk_hsmpzye128">uwhkpye128</string>
+    <string name="junk_galyzze129">fxsaize129</string>
+    <string name="junk_oqzlqaf130">mjbneaf130</string>
+    <string name="junk_zbskrbf131">rjdlobf131</string>
+    <string name="junk_jpoulcf132">rxogkcf132</string>
+    <string name="junk_bryeydf133">ivsredf133</string>
+    <string name="junk_lzhudef134">cglhvef134</string>
+    <string name="junk_gzjiuff135">wktsnff135</string>
+    <string name="junk_snwhvgf136">omjhugf136</string>
+    <string name="junk_bfkghhf137">dctxwhf137</string>
+    <string name="junk_uwflzif138">nvrfgif138</string>
+    <string name="junk_rxhjljf139">gldqkjf139</string>
+    <string name="junk_vnbwmkf140">ikfvskf140</string>
+    <string name="junk_wtixdlf141">xvvoclf141</string>
+    <string name="junk_krfkumf142">hmopjmf142</string>
+    <string name="junk_gqnllnf143">jeilwnf143</string>
+    <string name="junk_nkumoof144">sspurof144</string>
+    <string name="junk_pcqacpf145">qwszrpf145</string>
+    <string name="junk_xowfgqf146">cqcyyqf146</string>
+    <string name="junk_rmyhvrf147">qtyovrf147</string>
+    <string name="junk_ckohxsf148">nsltlsf148</string>
+    <string name="junk_xhfjftf149">dwxlltf149</string>
+    <string name="junk_mcbejuf150">ezacxuf150</string>
+    <string name="junk_uplgmvf151">fkxhgvf151</string>
+    <string name="junk_otoogwf152">sjxjdwf152</string>
+    <string name="junk_kwmrhxf153">mipyexf153</string>
+    <string name="junk_silaayf154">aghhdyf154</string>
+    <string name="junk_qhdplzf155">tmeofzf155</string>
+    <string name="junk_pswtgag156">smcooag156</string>
+    <string name="junk_jdcovbg157">qvvaybg157</string>
+    <string name="junk_vdiujcg158">uhhwecg158</string>
+    <string name="junk_jpfiidg159">gvxavdg159</string>
+    <string name="junk_hrpeheg160">fsfxveg160</string>
+    <string name="junk_hvwqtfg161">sqyucfg161</string>
+    <string name="junk_hrhhdgg162">rmhvngg162</string>
+    <string name="junk_xzoaohg163">zxrbchg163</string>
+    <string name="junk_silpuig164">yutraig164</string>
+    <string name="junk_lzaewjg165">kaabbjg165</string>
+    <string name="junk_yilcokg166">ydldtkg166</string>
+    <string name="junk_ujufglg167">akppulg167</string>
+    <string name="junk_whgcdmg168">ruzocmg168</string>
+    <string name="junk_ljfxhng169">mhrpjng169</string>
+    <string name="junk_hjxxhog170">gepsuog170</string>
+    <string name="junk_wfhjnpg171">kuzejpg171</string>
+    <string name="junk_cryztqg172">awukoqg172</string>
+    <string name="junk_aqefzrg173">mzerbrg173</string>
+    <string name="junk_wbwqmsg174">rygmmsg174</string>
+    <string name="junk_gomdstg175">kluattg175</string>
+    <string name="junk_esxxkug176">bfwrmug176</string>
+    <string name="junk_panrrvg177">njrnfvg177</string>
+    <string name="junk_ewdelwg178">eletawg178</string>
+    <string name="junk_fizitxg179">kgrxbxg179</string>
+    <string name="junk_hgogmyg180">bkuslyg180</string>
+    <string name="junk_yvgvhzg181">jfxzgzg181</string>
+    <string name="junk_ascrlah182">qibmdah182</string>
+    <string name="junk_tbgdebh183">ajeeebh183</string>
+    <string name="junk_xrrbech184">biwodch184</string>
+    <string name="junk_dzpkkdh185">vrpifdh185</string>
+    <string name="junk_hnafgeh186">pzmyxeh186</string>
+    <string name="junk_ebgnefh187">apzbufh187</string>
+    <string name="junk_agyifgh188">nvlqpgh188</string>
+    <string name="junk_bddeyhh189">jjoechh189</string>
+    <string name="junk_gapelih190">qrykxih190</string>
+    <string name="junk_xoqysjh191">vwtxpjh191</string>
+    <string name="junk_iiqmzkh192">qvkitkh192</string>
+    <string name="junk_jkbqqlh193">vwqjclh193</string>
+    <string name="junk_wfmccmh194">nzzawmh194</string>
+    <string name="junk_zrloxnh195">xwtgynh195</string>
+    <string name="junk_lvtyzoh196">dagmcoh196</string>
+    <string name="junk_ijbxeph197">abwwlph197</string>
+    <string name="junk_aojdtqh198">wqkrbqh198</string>
+    <string name="junk_qttsnrh199">qjlimrh199</string>
+    <string name="junk_bxxywsh200">loavksh200</string>
+    <string name="junk_mdhnbth201">zrenvth201</string>
+    <string name="junk_rszaruh202">hlghuuh202</string>
+    <string name="junk_hrgsrvh203">drsgovh203</string>
+    <string name="junk_xlkmowh204">bsspgwh204</string>
+    <string name="junk_dlbnnxh205">vbjfkxh205</string>
+    <string name="junk_cvtnbyh206">moepgyh206</string>
+    <string name="junk_qjtnczh207">fuwhhzh207</string>
+    <string name="junk_ijmmkai208">kjealai208</string>
+    <string name="junk_qswkfbi209">axlekbi209</string>
+    <string name="junk_qvpkzci210">rscojci210</string>
+    <string name="junk_oeqmjdi211">ipblvdi211</string>
+    <string name="junk_hmbcqei212">mibawei212</string>
+    <string name="junk_wtjvmfi213">ovrfsfi213</string>
+    <string name="junk_hideqgi214">lydnagi214</string>
+    <string name="junk_usmbohi215">qaupqhi215</string>
+    <string name="junk_zmzrqii216">slfzwii216</string>
+    <string name="junk_qwbxhji217">oqqiqji217</string>
+    <string name="junk_faqifki218">agpbtki218</string>
+    <string name="junk_xzlqnli219">qprozli219</string>
+    <string name="junk_fxzwwmi220">tsziqmi220</string>
+    <string name="junk_iqutnni221">kmsopni221</string>
+    <string name="junk_swnrsoi222">prnneoi222</string>
+    <string name="junk_agzgzpi223">dnvnfpi223</string>
+    <string name="junk_ihyoaqi224">umwvuqi224</string>
+    <string name="junk_cioleri225">myrydri225</string>
+    <string name="junk_pxpbhsi226">owyilsi226</string>
+    <string name="junk_yywhzti227">keugcti227</string>
+    <string name="junk_ixahgui228">frcfvui228</string>
+    <string name="junk_qtggfvi229">fpthmvi229</string>
+    <string name="junk_osjsywi230">jztslwi230</string>
+    <string name="junk_banshxi231">ztmpsxi231</string>
+    <string name="junk_hgxzzyi232">ndfklyi232</string>
+    <string name="junk_xfdcpzi233">ewfryzi233</string>
+    <string name="junk_kfjcnaj234">pmosaaj234</string>
+    <string name="junk_iialmbj235">cikmpbj235</string>
+    <string name="junk_xqumscj236">xivswcj236</string>
+    <string name="junk_jfhhxdj237">tqltddj237</string>
+    <string name="junk_wdlgmej238">todvlej238</string>
+    <string name="junk_sjmicfj239">ipklufj239</string>
+    <string name="junk_ikjrrgj240">bborvgj240</string>
+    <string name="junk_jbwsmhj241">vddbshj241</string>
+    <string name="junk_bpxpqij242">cihxtij242</string>
+    <string name="junk_htgizjj243">huvsqjj243</string>
+    <string name="junk_cazfkkj244">fftfdkj244</string>
+    <string name="junk_ucluwlj245">yncfulj245</string>
+    <string name="junk_dimnsmj246">lghxdmj246</string>
+    <string name="junk_gzalxnj247">qjcrwnj247</string>
+    <string name="junk_dilwsoj248">ulsqfoj248</string>
+    <string name="junk_fmsdwpj249">rszewpj249</string>
+    <string name="junk_hjtfxqj250">vhcjhqj250</string>
+    <string name="junk_ziuhorj251">umsdrrj251</string>
+    <string name="junk_tgjhnsj252">ohxtdsj252</string>
+    <string name="junk_fjflwtj253">iceuptj253</string>
+    <string name="junk_zghweuj254">rbxoauj254</string>
+    <string name="junk_ryrarvj255">azfadvj255</string>
+    <string name="junk_vahiqwj256">ccdxxwj256</string>
+    <string name="junk_xmbutxj257">mwftyxj257</string>
+    <string name="junk_oizrkyj258">wmujwyj258</string>
+    <string name="junk_kdrjxzj259">mlijrzj259</string>
+    <string name="junk_vhqmmak260">jwyyhak260</string>
+    <string name="junk_dslgxbk261">gwivfbk261</string>
+    <string name="junk_eqfpeck262">xqatdck262</string>
+    <string name="junk_jjcmydk263">isruvdk263</string>
+    <string name="junk_tiynjek264">qrpfpek264</string>
+    <string name="junk_scnvpfk265">ugflzfk265</string>
+    <string name="junk_bonjkgk266">ycplmgk266</string>
+    <string name="junk_thfrzhk267">hpqodhk267</string>
+    <string name="junk_pqrseik268">xkecwik268</string>
+    <string name="junk_ihqqvjk269">bfsyrjk269</string>
+    <string name="junk_iqowzkk270">lguwkkk270</string>
+    <string name="junk_slcullk271">nzwtmlk271</string>
+    <string name="junk_rylqqmk272">dtxxcmk272</string>
+    <string name="junk_kxclink273">fhfovnk273</string>
+    <string name="junk_bznccok274">cdmptok274</string>
+    <string name="junk_holmxpk275">iesgnpk275</string>
+    <string name="junk_knzxgqk276">tderaqk276</string>
+    <string name="junk_xylfvrk277">ebkhcrk277</string>
+    <string name="junk_yimsmsk278">hbamlsk278</string>
+    <string name="junk_xmasstk279">odzzltk279</string>
+    <string name="junk_buwvzuk280">yuxrpuk280</string>
+    <string name="junk_aogzzvk281">hsfuovk281</string>
+    <string name="junk_xcqfywk282">xffihwk282</string>
+    <string name="junk_wlbuyxk283">dywsdxk283</string>
+    <string name="junk_yiludyk284">umzhnyk284</string>
+    <string name="junk_cwbvjzk285">mydqizk285</string>
+    <string name="junk_gprinal286">rnptpal286</string>
+    <string name="junk_djpiobl287">rivncbl287</string>
+    <string name="junk_pndrlcl288">lqfzqcl288</string>
+    <string name="junk_kvdcrdl289">adzocdl289</string>
+    <string name="junk_bkwuqel290">exmfhel290</string>
+    <string name="junk_tokfofl291">kuiomfl291</string>
+    <string name="junk_lqeytgl292">vqrxngl292</string>
+    <string name="junk_ptpvohl293">faezbhl293</string>
+    <string name="junk_wxwvkil294">uzajiil294</string>
+    <string name="junk_qfqqgjl295">njsjejl295</string>
+    <string name="junk_qnkyekl296">kocnpkl296</string>
+    <string name="junk_dxyrnll297">azzholl297</string>
+    <string name="junk_ptwllml298">dxqywml298</string>
+    <string name="junk_iqsdrnl299">rqfhpnl299</string>
+
+</resources>

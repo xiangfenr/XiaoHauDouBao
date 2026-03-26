@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f8fa">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:background="@drawable/home_top_mainbg"
+            android:orientation="vertical"
+
+            tools:context="com.example.yongliu.bottomnavigationview.MainActivity">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@mipmap/form_bg"
+                    android:drawablePadding="4dp"
+
+                android:text="社保信息"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form_gray_bg"
+                android:orientation="vertical"
+                android:paddingVertical="10dp"
+                android:paddingLeft="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="公积金"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/gongjijin_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="社保"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/shebao_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="商业保单"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/shangye_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="企业主"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/zhiye_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@mipmap/form_bg"
+                    android:drawablePadding="4dp"
+
+                android:text="资产信息"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form_gray_bg"
+                android:orientation="vertical"
+                android:paddingVertical="10dp"
+                android:paddingLeft="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="芝麻信用分"
+                        android:textColor="#000000"
+                        android:textSize="15dp" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/zhimascore_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="车产"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/car_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="房产"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/hourse_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txt_feedback_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dip"
+                android:layout_marginTop="50dip"
+                android:layout_marginRight="30dip"
+                android:layout_marginBottom="30dip"
+                android:background="@drawable/logincodebg"
+                android:gravity="center"
+                android:paddingTop="10dip"
+                android:paddingBottom="12dip"
+                android:text="下一步"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:drawableStart="@mipmap/form_bg"
+                    android:drawablePadding="4dp"
+
+                android:gravity="center_horizontal"
+                android:text="黔ICP备2022009504号"
+                android:textSize="@dimen/d_sp_12"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/dp_20"
+                android:text="@string/app_gongsi"
+                android:textSize="@dimen/d_sp_12" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

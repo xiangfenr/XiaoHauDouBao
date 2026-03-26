@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义一个cardview 用户存储选择设置图片-->
+    <declare-styleable name="ImageCardView">
+        <!--        设置默认图片-->
+        <attr name="cv_defaultBg" format="reference|integer" />
+        <attr name="cv_addIcon" format="reference|integer" />
+        <attr name="cv_closeIcon" format="reference|integer" />
+        <attr name="v_width" format="reference|dimension" />
+        <attr name="v_height" format="reference|dimension" />
+        <attr name="is_close" format="boolean"/>
+        <attr name="is_add" format="boolean"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="preview" format="enum">
+            <enum name="none" value="0"/>
+            <enum name="left" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="autoClose" format="boolean"/>
+        <attr name="designer" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="SwipeMenuRecyclerView">
+        <attr name="enableTouchAlways" format="boolean"/>
+    </declare-styleable>
+</resources>

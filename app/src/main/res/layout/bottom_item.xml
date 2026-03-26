@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d_dp_55"
+        android:gravity="center"
+        android:textColor="@color/BottomMenuText"
+        android:textSize="@dimen/d_sp_18" />
+</LinearLayout>

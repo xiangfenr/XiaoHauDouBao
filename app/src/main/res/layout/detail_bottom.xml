@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff"
+    android:orientation="horizontal"
+    android:paddingHorizontal="@dimen/d_dp_16"
+    android:paddingVertical="@dimen/d_dp_10"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京银行"
+        android:textColor="#000000"
+        android:textSize="@dimen/d_sp_16" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/d_dp_16"
+        android:layout_marginEnd="@dimen/d_dp_16"
+        android:autofillHints=""
+        android:background="@color/color_ffffff"
+        android:gravity="end"
+        android:maxWidth="@dimen/d_dp_300"
+        android:text="**** **** **** 229"
+        android:textColor="#000000"
+        android:textSize="@dimen/d_sp_16" />
+
+</RelativeLayout>

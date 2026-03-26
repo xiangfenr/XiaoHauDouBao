@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:id="@+id/tv_zhong_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="刘**"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="身份证号码"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="3***************78"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="借款金额"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="30000元"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="到账金额"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="30000元"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还款总额"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="30450元(含利息450元)还款详情"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:id="@+id/tv_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="还款详情"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="借款日息"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="0.05%"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="放款机构"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="南宁乘数小额贷"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="horizontal"
+        android:paddingHorizontal="@dimen/d_dp_16"
+        android:paddingVertical="@dimen/d_dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务费"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/d_dp_16"
+            android:layout_marginEnd="@dimen/d_dp_16"
+            android:autofillHints=""
+            android:background="@color/color_ffffff"
+            android:gravity="end"
+            android:maxWidth="@dimen/d_dp_300"
+            android:text="0元"
+            android:textColor="#000000"
+            android:textSize="@dimen/d_sp_16" />
+
+    </RelativeLayout>
+
+</LinearLayout>

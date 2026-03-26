@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>贷款计算器</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 15px 15px 80px;
+        }
+
+        .calculator {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .calculator-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .repayment-tabs {
+            display: flex;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 500;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .tab.active {
+            background-color: #409eff;
+            color: #fff;
+        }
+
+        .calculator-body {
+            padding: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .unit {
+            padding: 0 10px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .range-slider {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .range-slider input {
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            background: #f0f0f0;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .range-slider input::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #409eff;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .range-slider input::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #409eff;
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .range-value {
+            text-align: right;
+            font-size: 12px;
+            color: #999;
+            margin-top: 4px;
+        }
+
+        .result-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px dashed #eee;
+        }
+
+        .result-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .result-cards {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .result-card {
+            flex: 1;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .result-card-title {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .result-card-value {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .result-card-value.primary {
+            color: #409eff;
+        }
+
+        .result-detail {
+            margin-top: 15px;
+        }
+
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .detail-item:last-child {
+            border-bottom: none;
+        }
+
+        .detail-label {
+            color: #666;
+        }
+
+        .detail-value {
+            font-weight: 500;
+            color: #333;
+        }
+
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="calculator">
+        <div class="calculator-header">
+            <div class="repayment-tabs">
+                <div class="tab active" id="equal-installment">等额本息</div>
+                <div class="tab" id="equal-principal">等额本金</div>
+            </div>
+        </div>
+
+        <div class="calculator-body">
+            <!-- 贷款金额 -->
+            <div class="input-group">
+                <label class="input-label">贷款金额（元）</label>
+                <div class="input-wrapper">
+                    <input type="number" class="input-field" id="loanAmount" value="100000">
+                    <span class="unit">元</span>
+                </div>
+                <div class="range-slider">
+                    <input type="range" min="10000" max="1000000" step="10000" value="100000" id="loanAmountRange">
+                </div>
+                <div class="range-value"><span id="loanAmountValue">100,000</span> 元</div>
+            </div>
+
+            <!-- 贷款期限 -->
+            <div class="input-group">
+                <label class="input-label">贷款期限</label>
+                <div class="input-wrapper">
+                    <input type="number" class="input-field" id="loanTerm" value="12" min="1">
+                    <select id="termUnit" style="padding: 10px; border: none; background: #f0f0f0;">
+                        <option value="month">个月</option>
+                        <option value="year">年</option>
+                    </select>
+                </div>
+                <div class="range-slider">
+                    <input type="range" min="1" max="360" step="1" value="12" id="loanTermRange">
+                </div>
+                <div class="range-value"><span id="loanTermValue">12</span> 个月</div>
+            </div>
+
+            <!-- 年利率 -->
+            <div class="input-group">
+                <label class="input-label">年利率（%）</label>
+                <div class="input-wrapper">
+                    <input type="number" class="input-field" id="interestRate" value="5.5" min="0" step="0.1">
+                    <span class="unit">%</span>
+                </div>
+                <div class="range-slider">
+                    <input type="range" min="1" max="20" step="0.1" value="5.5" id="interestRateRange">
+                </div>
+                <div class="range-value"><span id="interestRateValue">5.5</span> %</div>
+            </div>
+
+            <!-- 计算结果 -->
+            <div class="result-section">
+                <h3 class="result-title">计算结果</h3>
+
+                <div class="result-cards">
+                    <div class="result-card">
+                        <div class="result-card-title">每月还款</div>
+                        <div class="result-card-value primary" id="monthlyPayment">8,580.00</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-card-title">支付利息</div>
+                        <div class="result-card-value" id="totalInterest">3,960.00</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-card-title">还款总额</div>
+                        <div class="result-card-value" id="totalPayment">103,960.00</div>
+                    </div>
+                </div>
+
+                <div class="result-detail">
+                    <div class="detail-item">
+                        <span class="detail-label">贷款总额</span>
+                        <span class="detail-value" id="loanTotal">100,000.00元</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">总支付利息</span>
+                        <span class="detail-value" id="interestTotal">3,960.00元</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">本息合计</span>
+                        <span class="detail-value" id="paymentTotal">103,960.00元</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>计算结果仅供参考，实际还款金额以银行为准</p>
+    </div>
+</div>
+
+<script>
+    // 格式化金额，添加千分位分隔符
+    function formatMoney(num) {
+        return parseFloat(num).toLocaleString('zh-CN', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        });
+    }
+
+    // 等额本息计算
+    function calculateEqualInstallment(loanAmount, annualRate, termMonths) {
+        const monthlyRate = annualRate / 12 / 100;
+        const n = termMonths;
+
+        // 每月还款额 = [贷款本金×月利率×(1+月利率)^还款月数] ÷ [(1+月利率)^还款月数-1]
+        const monthlyPayment = loanAmount * monthlyRate * Math.pow(1 + monthlyRate, n) / (Math.pow(1 + monthlyRate, n) - 1);
+
+        const totalPayment = monthlyPayment * n;
+        const totalInterest = totalPayment - loanAmount;
+
+        return {
+            monthlyPayment: monthlyPayment,
+            totalPayment: totalPayment,
+            totalInterest: totalInterest
+        };
+    }
+
+    // 等额本金计算
+    function calculateEqualPrincipal(loanAmount, annualRate, termMonths) {
+        const monthlyRate = annualRate / 12 / 100;
+
+        // 首月还款额 = (贷款本金 ÷ 还款月数) + (贷款本金 × 月利率)
+        const principalPerMonth = loanAmount / termMonths;
+        const firstMonthPayment = principalPerMonth + loanAmount * monthlyRate;
+
+        // 总利息 = (还款月数 + 1) × 贷款本金 × 月利率 / 2
+        const totalInterest = (termMonths + 1) * loanAmount * monthlyRate / 2;
+        const totalPayment = loanAmount + totalInterest;
+
+        return {
+            firstMonthPayment: firstMonthPayment,
+            principalPerMonth: principalPerMonth,
+            monthlyRate: monthlyRate,
+            totalPayment: totalPayment,
+            totalInterest: totalInterest
+        };
+    }
+
+    // 更新结果显示
+    function updateResult() {
+        const loanAmount = parseFloat(document.getElementById('loanAmount').value) || 0;
+        let termMonths = parseInt(document.getElementById('loanTerm').value) || 1;
+        const annualRate = parseFloat(document.getElementById('interestRate').value) || 0;
+        const termUnit = document.getElementById('termUnit').value;
+
+        // 如果选择年，则转换为月
+        if (termUnit === 'year') {
+            termMonths = termMonths * 12;
+        }
+
+        const isEqualInstallment = document.getElementById('equal-installment').classList.contains('active');
+
+        let result = {};
+
+        if (isEqualInstallment) {
+            result = calculateEqualInstallment(loanAmount, annualRate, termMonths);
+
+            document.getElementById('monthlyPayment').textContent = formatMoney(result.monthlyPayment);
+            document.getElementById('totalInterest').textContent = formatMoney(result.totalInterest);
+            document.getElementById('totalPayment').textContent = formatMoney(result.totalPayment);
+        } else {
+            result = calculateEqualPrincipal(loanAmount, annualRate, termMonths);
+
+            document.getElementById('monthlyPayment').textContent = formatMoney(result.firstMonthPayment) + ' (首月)';
+            document.getElementById('totalInterest').textContent = formatMoney(result.totalInterest);
+            document.getElementById('totalPayment').textContent = formatMoney(result.totalPayment);
+        }
+
+        // 更新详情
+        document.getElementById('loanTotal').textContent = formatMoney(loanAmount) + '元';
+        document.getElementById('interestTotal').textContent = formatMoney(result.totalInterest) + '元';
+        document.getElementById('paymentTotal').textContent = formatMoney(result.totalPayment) + '元';
+    }
+
+    // 绑定事件监听
+    document.addEventListener('DOMContentLoaded', function () {
+        // 选项卡切换
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                updateResult();
+            });
+        });
+
+        // 贷款金额输入
+        const loanAmountInput = document.getElementById('loanAmount');
+        const loanAmountRange = document.getElementById('loanAmountRange');
+        const loanAmountValue = document.getElementById('loanAmountValue');
+
+        loanAmountInput.addEventListener('input', function () {
+            const value = parseFloat(this.value) || 0;
+            loanAmountRange.value = value;
+            loanAmountValue.textContent = formatMoney(value);
+            updateResult();
+        });
+
+        loanAmountRange.addEventListener('input', function () {
+            const value = parseInt(this.value);
+            loanAmountInput.value = value;
+            loanAmountValue.textContent = formatMoney(value);
+            updateResult();
+        });
+
+        // 贷款期限输入
+        const loanTermInput = document.getElementById('loanTerm');
+        const loanTermRange = document.getElementById('loanTermRange');
+        const loanTermValue = document.getElementById('loanTermValue');
+        const termUnitSelect = document.getElementById('termUnit');
+
+        function updateTermDisplay() {
+            const value = parseInt(loanTermInput.value) || 1;
+            const unit = termUnitSelect.value;
+
+            let displayValue, displayUnit, rangeValue;
+
+            if (unit === 'year') {
+                displayValue = value;
+                displayUnit = '年';
+                rangeValue = value * 12;
+            } else {
+                displayValue = value;
+                displayUnit = '个月';
+                rangeValue = value;
+            }
+
+            loanTermValue.textContent = displayValue;
+            document.querySelector('.range-value:nth-child(3)').textContent = displayValue + ' ' + displayUnit;
+            loanTermRange.value = Math.min(rangeValue, 360);
+        }
+
+        loanTermInput.addEventListener('input', function () {
+            updateTermDisplay();
+            updateResult();
+        });
+
+        termUnitSelect.addEventListener('change', function () {
+            updateTermDisplay();
+            updateResult();
+        });
+
+        loanTermRange.addEventListener('input', function () {
+            const value = parseInt(this.value);
+            const unit = termUnitSelect.value;
+
+            if (unit === 'year') {
+                loanTermInput.value = Math.ceil(value / 12);
+            } else {
+                loanTermInput.value = value;
+            }
+
+            updateTermDisplay();
+            updateResult();
+        });
+
+        // 利率输入
+        const interestRateInput = document.getElementById('interestRate');
+        const interestRateRange = document.getElementById('interestRateRange');
+        const interestRateValue = document.getElementById('interestRateValue');
+
+        interestRateInput.addEventListener('input', function () {
+            const value = parseFloat(this.value) || 0;
+            interestRateRange.value = value;
+            interestRateValue.textContent = value.toFixed(1);
+            updateResult();
+        });
+
+        interestRateRange.addEventListener('input', function () {
+            const value = parseFloat(this.value);
+            interestRateInput.value = value.toFixed(1);
+            interestRateValue.textContent = value.toFixed(1);
+            updateResult();
+        });
+
+        // 初始化计算
+        updateResult();
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yundou.loans">
+
+    <!--乐享贷款借钱花 com.yundou.loans  icon_logo>
+    <!-微秒用   com.weimiaoy.info      icon_weimiao-->
+    <!--小鱼薪呗 com.xiaoyuxb.info     icon_xiao-->
+    <!--小橙优卡 com.smart.mai         icon_chengzi-->
+    <!--美信易卡 com.yundou.loans         icon_mei-->
+
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <!--检查网络可用性-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--获取 device id 辨别设备-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--文件读取权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--文件读取权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+
+    <!--  解决华为 Mate 30 Pro 5G(HarmonyOS 2.0.0)、 启动失败的问题 -->
+    <!--  在 HarmonyOS 中用于：允许应用修改其他应用的组件设置,启用特殊窗口管理功能（如无输入通道窗口,访问跨应用系统级窗口控制-->
+    <uses-permission android:name="com.huawei.permission.external_app_settings.USE_COMPONENT" />
+
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:name="com.yundou.loans.MyApplication"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:forceDarkAllowed="false"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/YourAppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:theme"
+        tools:targetApi="31">
+        <activity
+            android:name="com.yundou.loans.ui.mine.FlashActivitty"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.yundou.loans.ui.mine.LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTask" />
+        <activity
+            android:name="com.yundou.loans.ui.mine.MainActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.mine.PrivacyActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.mine.AgreementActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.ZxdFormActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.yundou.loans.ui.CommonWebViewActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.FeedbackActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.DetailActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.JiDaiFormActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.DetailItemActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.PassWordActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.SRChoiceOneActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.SRChoiceTwoActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.MoLiOneFormActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.MoLiTwoFormActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.ChoiceOneActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.ChoiceTwoActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.YouQianOneActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.YouQianTwoActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.KydFormActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.WmSuccessActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.WmXieYIActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.JIYQBFormOneActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.JiYQBFormTwoActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.JiYQBFormThreeActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.TwoProOneFormActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.TwoProTwoFormActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.TwoProThreeFormActivity"
+            android:exported="true" />
+
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.JIYBangFormOneActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.JiYBangFormTwoActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.JiYBangFormThreeActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.loan.TXFQFormOneActivity"
+            android:exported="true" />
+
+       <activity
+            android:name="com.yundou.loans.ui.loan.TXFQFormTwoActivity"
+            android:exported="true" />
+
+       <activity
+            android:name="com.yundou.loans.ui.loan.TXFQFormThreeActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.mine.JkGuideActivity"
+            android:exported="true" />
+         <activity
+            android:name="com.yundou.loans.ui.mine.HkGuideActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.yundou.loans.ui.mine.BkGuideActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.QuanLiuChengFormLoanActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.yundou.loans.ui.loan.QiDaiProduceActivity"
+            android:exported="true" />
+
+
+        <meta-data
+            android:name="TencentMapSDK"
+            android:value="IKCBZ-4UKLC-YP32A-AIN6I-5HUCZ-FDBAJ" />
+
+        <meta-data
+            android:name="CHANNEL_VALUE"
+            android:value="${channel_value}" />
+
+    </application>
+
+</manifest>

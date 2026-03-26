@@ -1,0 +1,74 @@
+package com.yundou.loans.utils
+
+import android.content.Context
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.yundou.loans.entity.MoLiProvince
+import com.yundou.loans.entity.ProvinceBean
+import java.io.BufferedReader
+import java.io.InputStreamReader
+
+fun loadRegionsFromAssets(context: Context): List<ProvinceBean> {
+    val assetManager = context.assets
+    val inputStream = assetManager.open("province.json")
+    val bufferedReader = BufferedReader(InputStreamReader(inputStream))
+    val json = bufferedReader.use { it.readText() }
+
+    // 使用 Gson 解析 JSON
+    val gson = Gson()
+    val typeToken = object : TypeToken<List<ProvinceBean>>() {}.type
+    return gson.fromJson(json, typeToken)
+}
+
+fun getTwoPRegion(context: Context): List<MoLiProvince> {
+    val assetManager = context.assets
+    val inputStream = assetManager.open("twopregion.json")
+    val bufferedReader = BufferedReader(InputStreamReader(inputStream))
+    val json = bufferedReader.use { it.readText() }
+
+    // 使用 Gson 解析 JSON
+    val gson = Gson()
+    val typeToken = object : TypeToken<List<MoLiProvince>>() {}.type
+    return gson.fromJson(json, typeToken)
+}
+
+object ChinaAdministrativeDivisions {
+    // 直辖市和特别行政区
+    // private val municipalities = setOf("北京", "天津", "上海", "重庆", "香港", "澳门")
+
+    // 自治州列表
+    private val autonomousPrefectures = setOf(
+        "延边朝鲜族自治州", "恩施土家族苗族自治州", "湘西土家族苗族自治州",
+        "阿坝藏族羌族自治州", "甘孜藏族自治州", "凉山彝族自治州",
+        "黔东南苗族侗族自治州", "黔南布依族苗族自治州", "黔西南布依族苗族自治州",
+        "西双版纳傣族自治州", "德宏傣族景颇族自治州", "怒江傈僳族自治州",
+        "迪庆藏族自治州", "大理白族自治州", "楚雄彝族自治州",
+        "红河哈尼族彝族自治州", "文山壮族苗族自治州", "甘南藏族自治州",
+        "临夏回族自治州", "海北藏族自治州", "黄南藏族自治州",
+        "海南藏族自治州", "果洛藏族自治州", "玉树藏族自治州",
+        "海西蒙古族藏族自治州", "昌吉回族自治州", "博尔塔拉蒙古自治州",
+        "巴音郭楞蒙古自治州", "克孜勒苏柯尔克孜自治州", "伊犁哈萨克自治州"
+    )
+
+    // 盟列表
+    private val leagues = setOf(
+        "兴安盟", "锡林郭勒盟", "阿拉善盟"
+    )
+
+    fun formatRegionName(regionName: String?): String? {
+        if (regionName.isNullOrEmpty()) return null
+
+        return when {
+//            regionName in municipalities -> regionName
+            regionName in autonomousPrefectures -> regionName
+            regionName in leagues -> regionName
+            regionName.endsWith("市") -> regionName
+            regionName.endsWith("盟") -> regionName
+            regionName.endsWith("自治州") -> regionName
+            regionName.endsWith("地区") -> regionName
+            regionName.endsWith("林区") -> regionName
+            regionName.endsWith("特区") -> regionName
+            else -> "${regionName}市"
+        }
+    }
+}

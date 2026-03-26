@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f8fa">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:background="@drawable/home_top_mainbg"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:context="com.example.yongliu.bottomnavigationview.MainActivity">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawableStart="@mipmap/form_bg"
+                    android:drawablePadding="4dp"
+
+                android:text="借款信息"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/form_gray_bg"
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="是否逾期"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/yuqi_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="借款期限"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/qixian_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="月收入"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/yueshouru_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="贷款额度"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+                    <com.yundou.loans.widget.SingleHengSelectButtonGroup
+                        android:id="@+id/edu_Group"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:text="贷款金额"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        app:layout_constraintLeft_toLeftOf="parent" />
+
+
+
+                    <EditText
+                        android:id="@+id/password"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_gravity="end"
+                        android:visibility="gone"
+                        android:background="@null"
+                        android:drawablePadding="10dp"
+                        android:gravity="end|center_vertical"
+                        android:hint="请输入贷款额度(元)"
+                        android:inputType="number"
+                        android:paddingEnd="10dp"
+                        android:textColor="@color/color_000000"
+                        android:textColorHint="@color/color_666666"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/txt_feedback_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="30dip"
+                android:layout_marginTop="50dip"
+                android:layout_marginRight="30dip"
+                android:background="@drawable/logincodebg"
+                android:gravity="center"
+                android:paddingTop="10dip"
+                android:paddingBottom="12dip"
+                android:text="提交申请"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:drawableStart="@mipmap/form_bg"
+                    android:drawablePadding="4dp"
+
+                android:gravity="center_horizontal"
+                android:text="黔ICP备2022009504号"
+                android:textSize="@dimen/d_sp_12"
+                android:visibility="gone" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:paddingBottom="@dimen/dp_20"
+                android:text="@string/app_gongsi"
+                android:textSize="10dp" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>
