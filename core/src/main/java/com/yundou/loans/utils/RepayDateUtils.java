@@ -31,7 +31,7 @@ public class RepayDateUtils {
 
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(date);
-            calendar.add(Calendar.DAY_OF_YEAR, 27);
+            calendar.add(Calendar.DAY_OF_YEAR, 30);
 
             return sdf.format(calendar.getTime());
         } catch (Exception e) {
