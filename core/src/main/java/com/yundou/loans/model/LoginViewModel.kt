@@ -31,11 +31,15 @@ class LoginViewModel : BaseViewModel() {
     // 配置获取
     fun getServer(
         success: (DaikuanUrlData?) -> Unit,
+        failed: (msg: String) -> Unit
     ) {
         launchGo({
             val result = retrofit.getServer().await()
-            if (result.code == 0)
+            if (result.code == 0) {
                 success.invoke(result.data)
+            } else  {
+                failed.invoke(result.msg)
+            }
 
             judgeCode(result)
         })
@@ -120,7 +124,7 @@ class LoginViewModel : BaseViewModel() {
             val result = retrofit.getRegister(hashMap).await()
             if (result.code == 0) {
                 success.invoke(result.data.token.toString())
-            }else{
+            } else {
 
                 defUI.toastEvent.postValue(result.msg)
             }
@@ -150,7 +154,7 @@ class LoginViewModel : BaseViewModel() {
             val result = retrofit.getLogin(hashMap).await()
             if (result.code == 0) {
                 success.invoke(result.data.token.toString())
-            }else{
+            } else {
                 defUI.toastEvent.postValue(result.msg)
             }
 
@@ -231,10 +235,6 @@ class LoginViewModel : BaseViewModel() {
             judgeCode(result)
         })
     }
-
-
-
-
 
 
     //---------------笙融-微秒用 ---------接口------------------
@@ -1340,7 +1340,7 @@ class LoginViewModel : BaseViewModel() {
             )
             LogUtils.e("闪贷喵验证码: $hashmap")
 
-            val result = retrofit.shanDaiMiaoSendCode( hashmap).await()
+            val result = retrofit.shanDaiMiaoSendCode(hashmap).await()
             if (result.code == 200) {
                 success.invoke()
             } else
@@ -1359,14 +1359,13 @@ class LoginViewModel : BaseViewModel() {
             )
             LogUtils.e("闪贷喵登录: $hashmap")
 
-            val result = retrofit.shanDaiMiaoLogin( hashmap).await()
+            val result = retrofit.shanDaiMiaoLogin(hashmap).await()
             if (result.code == 200) {
                 success.invoke(result.token ?: "")
             } else
                 defUI.toastEvent.postValue(result.msg)
         })
     }
-
 
 
 }

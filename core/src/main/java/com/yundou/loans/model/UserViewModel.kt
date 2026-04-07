@@ -37,14 +37,18 @@ class UserViewModel : BaseViewModel() {
     private var retrofit = EasyHttp.getInstance().retrofitCreate(EasyServiceApi::class.java)
 
 
-    // 版本域名
-    fun geVersion(
+    // 配置获取
+    fun getServer(
         success: (DaikuanUrlData?) -> Unit,
+        failed: (msg: String) -> Unit
     ) {
         launchGo({
             val result = retrofit.getServer().await()
-            if (result.code == 0)
+            if (result.code == 0) {
                 success.invoke(result.data)
+            } else  {
+                failed.invoke(result.msg)
+            }
 
             judgeCode(result)
         })
