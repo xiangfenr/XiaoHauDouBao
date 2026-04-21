@@ -21,6 +21,8 @@ class OkBuilder(var okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Bui
     private var headersInterceptor = HeadersInterceptor()
 
     companion object {
+        private val sharedConnectionPool = ConnectionPool(8, 5, TimeUnit.MINUTES)
+
         /**
          * 初始化OkhttpClient 默认配置
          */
@@ -32,6 +34,7 @@ class OkBuilder(var okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Bui
             val cache = Cache(cacheFile, 1024 * 1024 * 50)
             return OkHttpClient.Builder()
                 .cache(cache)
+                .connectionPool(sharedConnectionPool)
                 .followSslRedirects(true)
                 .retryOnConnectionFailure(false)
                 .connectTimeout(180L, TimeUnit.SECONDS)
@@ -70,6 +73,8 @@ class OkBuilder(var okHttpClientBuilder: OkHttpClient.Builder = OkHttpClient.Bui
             File(Utils.getContext().applicationContext?.cacheDir, "cache")
         val cache = Cache(cacheFile, 1024 * 1024 * 50)
         okHttpClientBuilder = OkHttpClient.Builder()
+            .cache(cache)
+            .connectionPool(sharedConnectionPool)
             .followSslRedirects(true)
             .connectTimeout(180L, TimeUnit.SECONDS)
             .readTimeout(180L, TimeUnit.SECONDS)

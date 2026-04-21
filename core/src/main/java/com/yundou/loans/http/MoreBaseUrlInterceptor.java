@@ -23,64 +23,70 @@ public class MoreBaseUrlInterceptor implements Interceptor {
         if (urlnameList.size() > 0) {
             builder.removeHeader("urlname");
             String urlname = urlnameList.get(0);
-            HttpUrl baseURL = null;
+            HttpUrl baseUrl = null;
             if ("weimiaoyongUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getWeimiaoyongUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeimiaoyongUrl());
             } else if ("zhixiangdaiUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getZhixiangdaiUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getZhixiangdaiUrl());
             } else if ("kuaiyidaiUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getKuaiyidaiUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getKuaiyidaiUrl());
             } else if ("molierbaUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getMolierbaUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getMolierbaUrl());
             } else if ("twoHeRuiUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getTwoHeRuiUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getTwoHeRuiUrl());
             } else if ("jiLoanUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiLoanUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiLoanUrl());
             } else if ("wqbOrangeUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getWqbOrangeUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWqbOrangeUrl());
             } else if ("jiYongBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBaseUrl());
             } else if ("jiYongBangUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBangUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBangUrl());
             } else if ("yqqbBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getYqqbBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYqqbBaseUrl());
             } else if ("tianxiaFenQiBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getTianxiaFenQiBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getTianxiaFenQiBaseUrl());
             } else if ("zxdNewBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getZxdNewBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getZxdNewBaseUrl());
             } else if ("yuanXiaoHuaBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getYuanXiaoHuaBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYuanXiaoHuaBaseUrl());
             } else if ("qiDaiBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getQiDaiBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getQiDaiBaseUrl());
             } else if ("weiRongBaoUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getWeiRongBaoUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeiRongBaoUrl());
             } else if ("jiDaiBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiDaiBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiDaiBaseUrl());
             } else if ("xiaoFuBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getXiaoFuBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getXiaoFuBaseUrl());
             } else if ("longYanUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getLongYanUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getLongYanUrl());
             } else if ("weiYinBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getWeiYinBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeiYinBaseUrl());
             } else if ("jiYiHuaBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiYiHuaBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYiHuaBaseUrl());
             } else if ("yueXiangBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getYueXiangBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYueXiangBaseUrl());
             } else if ("baJieBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getBaJieBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getBaJieBaseUrl());
             } else if ("shanDaiMiaoBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getShanDaiMiaoBaseUrl());
-            }else if ("jiYongQianBaoBaseUrl".equals(urlname)) {
-                baseURL = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongQianBaoBaseUrl());
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getShanDaiMiaoBaseUrl());
+            } else if ("jiYongQianBaoBaseUrl".equals(urlname)) {
+                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongQianBaoBaseUrl());
             }
 
-            assert baseURL != null;
-            HttpUrl newHttpUrl = oldUrl.newBuilder()
-                    .scheme(baseURL.scheme())
-                    .host(baseURL.host())
-                    .port(baseURL.port())
-                    .build();
-            Request newRequest = builder.url(newHttpUrl).build();
+            if (baseUrl == null) {
+                return chain.proceed(originalRequest);
+            }
+
+            HttpUrl.Builder newUrlBuilder = baseUrl.newBuilder();
+            for (String pathSegment : oldUrl.encodedPathSegments()) {
+                if (!pathSegment.isEmpty()) {
+                    newUrlBuilder.addEncodedPathSegment(pathSegment);
+                }
+            }
+            newUrlBuilder.encodedQuery(oldUrl.encodedQuery());
+
+            Request newRequest = builder.url(newUrlBuilder.build()).build();
             return chain.proceed(newRequest);
         } else {
             return chain.proceed(originalRequest);

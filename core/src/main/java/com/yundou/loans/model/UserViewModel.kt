@@ -2,12 +2,14 @@ package com.yundou.loans.model
 
 
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.alibaba.android.arouter.utils.TextUtils
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 import com.yundou.loans.base.BaseApp
 import com.yundou.loans.base.BaseViewModel
 import com.yundou.loans.base.Message
@@ -33,6 +35,10 @@ import kotlin.coroutines.resume
 import kotlin.toString
 
 class UserViewModel : BaseViewModel() {
+
+    companion object {
+        private const val KEY_MOLI_TREE_V1_CACHE = "KEY_MOLI_TREE_V1_CACHE"
+    }
 
     private var retrofit = EasyHttp.getInstance().retrofitCreate(EasyServiceApi::class.java)
 
@@ -441,6 +447,20 @@ class UserViewModel : BaseViewModel() {
 
 
     fun moliTreeV1(success: (List<MoLiProvince>) -> Unit) {
+        val cacheJson = MmkvUtil.getInstance().decodeString(KEY_MOLI_TREE_V1_CACHE)
+        if (!cacheJson.isNullOrEmpty()) {
+            try {
+                val cacheType = object : TypeToken<List<MoLiProvince>>() {}.type
+                val cacheData: List<MoLiProvince> = Gson().fromJson(cacheJson, cacheType)
+                if (cacheData.isNotEmpty()) {
+                    success.invoke(cacheData)
+                    return
+                }
+            } catch (_: Exception) {
+                MmkvUtil.getInstance().removeKey(KEY_MOLI_TREE_V1_CACHE)
+            }
+        }
+
         launchGo({
             val appKeybody: RequestBody =
                 RequestBody.create("text/plain".toMediaTypeOrNull(), BaseApp.context.mlAPPKEY)
@@ -448,9 +468,11 @@ class UserViewModel : BaseViewModel() {
                 "app_key=${BaseApp.context.mlAPPKEY}${BaseApp.context.mlAPPSECRET}"
             val md5Sign = SHA256.encryptMD5(params)
             val sign: RequestBody = RequestBody.create("text/plain".toMediaTypeOrNull(), md5Sign)
-
+            val start = System.currentTimeMillis()
             val result = retrofit.moliTreeV1(appKeybody, sign).await()
+            Log.e("time", "总耗时=${System.currentTimeMillis() - start}")
             if (result.status == 1) {
+                MmkvUtil.getInstance().encode(KEY_MOLI_TREE_V1_CACHE, Gson().toJson(result.data))
                 success.invoke(result.data)
             } else {
                 Toast.makeText(BaseApp.context, result.info, Toast.LENGTH_LONG).show()

@@ -47,7 +47,8 @@ data class ChannerItem(
     val id: Int? = null,
     val loan_id: String? = null,
     val brief_content: String? = null,
-    val sort: Int = 0
+    val sort: Int = 0,
+    val url_type: Int=0, //1非联登，2联登
 ) : Serializable
 
 
