@@ -58,7 +58,9 @@ open class BaseApp : Application() {
     val shengrongH5Url get() = appConfig.shengrongH5Url
     val zhixiangdaiUrl get() = appConfig.zhixiangdaiUrl
     val kuaiyidaiUrl get() = appConfig.kuaiyidaiUrl
-    val molierbaUrl get() = appConfig.molierbaUrl
+    var molierbaUrl 
+        get() = appConfig.molierbaUrl
+        set(value) { appConfig.molierbaUrl = value }
     val twoHeRuiUrl get() = appConfig.twoHeRuiUrl
     val jiLoanUrl get() = appConfig.jiLoanUrl
     val wqbOrangeUrl get() = appConfig.wqbOrangeUrl

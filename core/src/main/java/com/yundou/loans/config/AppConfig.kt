@@ -18,7 +18,7 @@ interface AppConfig {
     val shengrongH5Url: String
     val zhixiangdaiUrl: String
     val kuaiyidaiUrl: String
-    val molierbaUrl: String
+    var molierbaUrl: String
     val twoHeRuiUrl: String
     val jiLoanUrl: String
     val wqbOrangeUrl: String

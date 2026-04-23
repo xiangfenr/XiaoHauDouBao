@@ -18,6 +18,8 @@ data class DaikuanUrlData(
     val recognize_id_card: Int = -1,    //身份证识别：1=关闭,2=打开
     val partner_id: Int = -1, //合作方ID
     val funding_provider: String? = null, //资金提供方
+    val partner_url: String? = null, //魔力的BaseUrl地址
+
 
     //旧的版本
     val url: DaikuanData,
