@@ -39,7 +39,13 @@ enum class AccountType(val code: Int) {
      * 登录方式: 验证码登录
      * 是否展示贷超: no
      * **/
-    HISTORICAL_ACCOUNT(5);       //
+    HISTORICAL_ACCOUNT(5),
+
+    /** 6、VIVO历史账号 走本部，不展示贷超
+     * 登录方式: 验证码登录
+     * 是否展示贷超: no
+     * **/
+    VIVO_HISTORICAL_ACCOUNT(code = 6);
 
 
 }
