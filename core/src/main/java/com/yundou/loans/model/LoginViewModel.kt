@@ -191,6 +191,8 @@ class LoginViewModel : BaseViewModel() {
         launchGo({
             val hashMap = HashMap<String, String?>()
             hashMap["content"] = content
+            hashMap["mobile"] =  MmkvUtil.getInstance().decodeString("loginphone")
+            hashMap["partner_id"] = MmkvUtil.getInstance().decodeInt("partner_id").toString()
             val result = retrofit.feedback(hashMap).await()
             defUI.toastEvent.postValue(result.msg)
             success.invoke()
