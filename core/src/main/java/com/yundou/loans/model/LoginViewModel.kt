@@ -199,19 +199,6 @@ class LoginViewModel : BaseViewModel() {
         })
     }
 
-    fun wMfeedback(content: String, success: () -> Unit) {
-        launchGo({
-            val hashMap = HashMap<String, String?>()
-            hashMap["content"] = content
-            hashMap["mobile"] = MmkvUtil.getInstance().decodeString("loginphone")
-            hashMap["partner_id"] = MmkvUtil.getInstance().decodeInt("partner_id").toString()
-            val result = retrofit.wMfeedback(hashMap).await()
-            defUI.toastEvent.postValue(result.msg)
-            success.invoke()
-
-            judgeCode(result)
-        })
-    }
 
 
     //退出登录

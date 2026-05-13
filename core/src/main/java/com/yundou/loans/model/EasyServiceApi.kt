@@ -78,10 +78,6 @@ interface EasyServiceApi {
         @Body body: HashMap<String, String?>,
     ): Deferred<ResultBean<FeedbackData>>
 
-    @POST("api/partner/feedback/feedback")
-    fun wMfeedback(
-        @Body body: HashMap<String, String?>,
-    ): Deferred<ResultBean<FeedbackData>>
 
     //表单二要素校验
     @POST("form/verify2meta")
