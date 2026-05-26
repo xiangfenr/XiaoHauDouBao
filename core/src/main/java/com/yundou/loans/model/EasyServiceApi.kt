@@ -52,7 +52,7 @@ interface EasyServiceApi {
 //    ): Deferred<ResultBean<Any>>
 
     @POST("user/logoff")
-    fun logoff(): Deferred<ResultBean<String>>
+    fun logoff( @Body body: HashMap<String, String?>): Deferred<ResultBean<String>>
 
     //检查第三方用户是否注销
 //    @GET("api/partner/user/checkOff")

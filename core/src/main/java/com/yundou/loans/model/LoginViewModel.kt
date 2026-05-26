@@ -214,10 +214,13 @@ class LoginViewModel : BaseViewModel() {
 //        })
 //    }
 
-    //退出登录
-    fun logoBack(success: () -> Unit) {
+    //注销账号
+    fun logoff(success: () -> Unit) {
         launchGo({
-            val result = retrofit.logoff().await()
+            val hashMap = HashMap<String, String?>()
+            hashMap["mobile"] =  MmkvUtil.getInstance().decodeString("loginphone")
+            hashMap["partner_id"] =  MmkvUtil.getInstance().decodeInt("partner_id").toString()
+            val result = retrofit.logoff(hashMap).await()
             if (result.code == 0) {
                 success.invoke()
             }
