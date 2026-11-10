@@ -16,7 +16,7 @@ import okhttp3.Response;
  */
 public class MoreBaseUrlInterceptor implements Interceptor {
 
-    private static final String MOLI_BASE_URL = "https://api-xy.ttgg123.cn";
+    private static final String MOLI_BASE_URL = "https://api.cdjywh.cn";
 
     @NonNull
     @Override
