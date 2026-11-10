@@ -174,11 +174,12 @@ class LoginViewModel : BaseViewModel() {
             } else {
                 defUI.toastEvent.postValue(result.info)
                 errorHash["result"] = Gson().toJson(result)
-                reportAbnormal(result.status, Gson().toJson(errorHash))
+                reportAbnormal(result.status, Gson().toJson(errorHash), mobile)
             }
         }, {
             errorHash["result"] = Gson().toJson(it.message)
-            reportAbnormal(it.code!!.toInt(), Gson().toJson(errorHash))
+            defUI.toastEvent.postValue("网络连接失败，请稍后重试")
+            reportAbnormal(it.code!!.toInt(), Gson().toJson(errorHash), mobile)
         })
     }
 
@@ -210,11 +211,12 @@ class LoginViewModel : BaseViewModel() {
             } else {
                 defUI.toastEvent.postValue(result.info)
                 errorHash["result"] = Gson().toJson(result)
-                reportAbnormal(result.status, Gson().toJson(errorHash))
+                reportAbnormal(result.status, Gson().toJson(errorHash), mobile)
             }
         }, {
             errorHash["result"] = Gson().toJson(it.message)
-            reportAbnormal(it.code!!.toInt(), Gson().toJson(errorHash))
+            defUI.toastEvent.postValue("网络连接失败，请稍后重试")
+            reportAbnormal(it.code!!.toInt(), Gson().toJson(errorHash), mobile)
         })
     }
 
