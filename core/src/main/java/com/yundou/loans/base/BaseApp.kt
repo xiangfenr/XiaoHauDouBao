@@ -17,7 +17,7 @@ open class BaseApp : Application() {
         super.onCreate()
         context = this
     }
-    
+
     protected fun initHttp(baseUrl: String) {
         get().setApplication(this).setBaseUrl(baseUrl)
         get().debug("vpaas")
@@ -29,7 +29,7 @@ open class BaseApp : Application() {
         super.onTerminate()
         ARouter.getInstance().destroy()
     }
-    
+
     // 便捷访问配置的属性
     val appConfig get() = AppConfigManager.getConfig()
     val baseUrl get() = appConfig.baseUrl
@@ -39,47 +39,17 @@ open class BaseApp : Application() {
     val zhuhceXieyi get() = appConfig.zhuhceXieyi
     val storeid get() = appConfig.storeid
     val srpackage_id get() = appConfig.srpackageId
-    
-    var mlAPPKEY 
+
+    var mlAPPKEY
         get() = appConfig.mlAPPKEY
         set(value) { appConfig.mlAPPKEY = value }
-    var mlAPPSECRET 
+    var mlAPPSECRET
         get() = appConfig.mlAPPSECRET
         set(value) { appConfig.mlAPPSECRET = value }
-    var imsi 
+    var imsi
         get() = appConfig.imsi
         set(value) { appConfig.imsi = value }
-    var imei 
+    var imei
         get() = appConfig.imei
         set(value) { appConfig.imei = value }
-        
-    // 合作方域名
-    val weimiaoyongUrl get() = appConfig.weimiaoyongUrl
-    val shengrongH5Url get() = appConfig.shengrongH5Url
-    val zhixiangdaiUrl get() = appConfig.zhixiangdaiUrl
-    val kuaiyidaiUrl get() = appConfig.kuaiyidaiUrl
-    var molierbaUrl 
-        get() = appConfig.molierbaUrl
-        set(value) { appConfig.molierbaUrl = value }
-    val twoHeRuiUrl get() = appConfig.twoHeRuiUrl
-    val jiLoanUrl get() = appConfig.jiLoanUrl
-    val wqbOrangeUrl get() = appConfig.wqbOrangeUrl
-    val jiYongBaseUrl get() = appConfig.jiYongBaseUrl
-    val jiYongBangUrl get() = appConfig.jiYongBangUrl
-    val yqqbBaseUrl get() = appConfig.yqqbBaseUrl
-    val tianxiaFenQiBaseUrl get() = appConfig.tianxiaFenQiBaseUrl
-    val zxdNewBaseUrl get() = appConfig.zxdNewBaseUrl
-    val yuanXiaoHuaBaseUrl get() = appConfig.yuanXiaoHuaBaseUrl
-    val qiDaiBaseUrl get() = appConfig.qiDaiBaseUrl
-    val weiRongBaoUrl get() = appConfig.weiRongBaoUrl
-    val jiDaiBaseUrl get() = appConfig.jiDaiBaseUrl
-    val xiaoFuBaseUrl get() = appConfig.xiaoFuBaseUrl
-    val longYanUrl get() = appConfig.longYanUrl
-    val weiYinBaseUrl get() = appConfig.weiYinBaseUrl
-    val yueXiangBaseUrl get() = appConfig.yueXiangBaseUrl
-    val jiYiHuaBaseUrl get() = appConfig.jiYiHuaBaseUrl
-    val baJieBaseUrl get() = appConfig.baJieBaseUrl
-    val shanDaiMiaoBaseUrl get() = appConfig.shanDaiMiaoBaseUrl
-    val jiYongQianBaoBaseUrl get() = appConfig.jiYongQianBaoBaseUrl
 }
-

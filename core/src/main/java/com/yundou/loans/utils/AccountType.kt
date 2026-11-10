@@ -18,7 +18,7 @@ enum class AccountType(val code: Int) {
 
     /**
      * 2、应用商店审核 (客户端切到本服)
-     * 登录方式: 密码登录
+     * 登录方式: 验证码登录
      * 是否展示贷超: no
      * ***/
     APP_STORE_REVIEWER(2),

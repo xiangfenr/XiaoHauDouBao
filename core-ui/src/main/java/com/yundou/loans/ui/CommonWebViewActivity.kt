@@ -53,22 +53,6 @@ class CommonWebViewActivity : CommonActivity<UserViewModel, CommonWebLayoutBindi
 
         LogUtils.e("webview--url --: $webUrl")
 
-        // 逾期处理的上报
-        if (webUrl.contains("zhiyunjishu")) {
-            val phone = MmkvUtil.Companion.getInstance().decodeString("loginphone") ?: ""
-            val partnerId = MmkvUtil.Companion.getInstance().decodeInt("partner_id")
-
-            viewModel.daikuanYuqiPush(
-                "40",
-                partnerId.toString(),
-                phone
-            ) {
-
-            }
-        }
-
-        LogUtils.d("webUrl", webUrl)
-
         if (webUrl.isNotEmpty()) {
 
             mBinding.webview.setLayerType(WebView.LAYER_TYPE_HARDWARE, null)

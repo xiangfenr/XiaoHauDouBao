@@ -2,8 +2,6 @@ package com.yundou.loans.http;
 
 import androidx.annotation.NonNull;
 
-import com.yundou.loans.base.BaseApp;
-
 import java.io.IOException;
 import java.util.List;
 
@@ -12,7 +10,14 @@ import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
 
+/**
+ * 合作方接口地址路由。
+ * 当前版本仅保留魔力一家合作方，地址写死本地，不再支持服务端动态下发。
+ */
 public class MoreBaseUrlInterceptor implements Interceptor {
+
+    private static final String MOLI_BASE_URL = "https://api-xy.cdjywh.cn";
+
     @NonNull
     @Override
     public Response intercept(@NonNull Chain chain) throws IOException {
@@ -24,54 +29,8 @@ public class MoreBaseUrlInterceptor implements Interceptor {
             builder.removeHeader("urlname");
             String urlname = urlnameList.get(0);
             HttpUrl baseUrl = null;
-            if ("weimiaoyongUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeimiaoyongUrl());
-            } else if ("zhixiangdaiUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getZhixiangdaiUrl());
-            } else if ("kuaiyidaiUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getKuaiyidaiUrl());
-            } else if ("molierbaUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getMolierbaUrl());
-            } else if ("twoHeRuiUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getTwoHeRuiUrl());
-            } else if ("jiLoanUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiLoanUrl());
-            } else if ("wqbOrangeUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWqbOrangeUrl());
-            } else if ("jiYongBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBaseUrl());
-            } else if ("jiYongBangUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongBangUrl());
-            } else if ("yqqbBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYqqbBaseUrl());
-            } else if ("tianxiaFenQiBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getTianxiaFenQiBaseUrl());
-            } else if ("zxdNewBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getZxdNewBaseUrl());
-            } else if ("yuanXiaoHuaBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYuanXiaoHuaBaseUrl());
-            } else if ("qiDaiBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getQiDaiBaseUrl());
-            } else if ("weiRongBaoUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeiRongBaoUrl());
-            } else if ("jiDaiBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiDaiBaseUrl());
-            } else if ("xiaoFuBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getXiaoFuBaseUrl());
-            } else if ("longYanUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getLongYanUrl());
-            } else if ("weiYinBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getWeiYinBaseUrl());
-            } else if ("jiYiHuaBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYiHuaBaseUrl());
-            } else if ("yueXiangBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getYueXiangBaseUrl());
-            } else if ("baJieBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getBaJieBaseUrl());
-            } else if ("shanDaiMiaoBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getShanDaiMiaoBaseUrl());
-            } else if ("jiYongQianBaoBaseUrl".equals(urlname)) {
-                baseUrl = HttpUrl.parse(BaseApp.Companion.getContext().getJiYongQianBaoBaseUrl());
+            if ("molierbaUrl".equals(urlname)) {
+                baseUrl = HttpUrl.parse(MOLI_BASE_URL);
             }
 
             if (baseUrl == null) {
@@ -93,4 +52,3 @@ public class MoreBaseUrlInterceptor implements Interceptor {
         }
     }
 }
-
