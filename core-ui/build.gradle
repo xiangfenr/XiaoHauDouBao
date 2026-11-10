@@ -39,7 +39,7 @@ afterEvaluate {
 
                 groupId = 'com.github.xiangfenr.XiaoHauDouBao'
                 artifactId = 'core-ui'
-                version = '1.2.2'
+                version = '1.2.3'
             }
         }
     }
