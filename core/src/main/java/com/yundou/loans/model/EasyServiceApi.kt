@@ -16,6 +16,12 @@ interface EasyServiceApi {
     @GET("server")
     fun getServer(): Deferred<ResultBean<DaikuanUrlData>>
 
+    // 发送验证码（本部）
+    @GET("user/sms")
+    fun getMsgCode(
+        @Query("mobile") mobile: String,
+    ): Deferred<ResultBean<Any>>
+
     //收集异常
     @POST("report/abnormal")
     fun reportAbnormal(

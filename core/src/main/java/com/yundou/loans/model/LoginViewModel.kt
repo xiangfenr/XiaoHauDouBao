@@ -149,6 +149,26 @@ class LoginViewModel : BaseViewModel() {
     }
 
 
+    //--------------------本部 接口--------------------
+
+    //发送短信（本部）
+    fun getSmsCode(
+        phone: String,
+        success: () -> Unit,
+    ) {
+        launchGo({
+            val result = retrofit.getMsgCode(phone).await()
+            if (result.code == 0) {
+                success.invoke()
+                defUI.toastEvent.postValue("验证码发送成功")
+            } else
+                defUI.toastEvent.postValue(result.msg)
+
+            judgeCode(result)
+        })
+    }
+
+
     //--------------------魔力 接口--------------------
 
     fun moliGetCode(mobile: String, success: (String) -> Unit) {
