@@ -31,28 +31,30 @@ class HeadersInterceptor : Interceptor {
             headerMap["aid"] = BaseApp.context.app_id
             val time = (System.currentTimeMillis() / 1000).toString()
             headerMap["t"] = time
-            var androidId = MmkvUtil.getInstance().decodeString("androidId")
-            var oaid = MmkvUtil.getInstance().decodeString("oaid")
+            val androidId = MmkvUtil.getInstance().decodeString("androidId")
 
-            if (!TextUtils.isEmpty(oaid)) {
-                headerMap["oaid"] = oaid
-            } else {
-                if (!TextUtils.isEmpty(androidId)) {
+            // OAID 属于个人信息，仅本部（t.zfrskj.top）接口携带；
+            // 带 urlname 标记的合作方（魔力）请求一律不下发，且不参与签名。
+            val isPartnerRequest = !TextUtils.isEmpty(original.header("urlname"))
+            var oaid: String? = null
+            if (!isPartnerRequest) {
+                oaid = MmkvUtil.getInstance().decodeString("oaid")
+                if (TextUtils.isEmpty(oaid)) {
                     oaid = androidId
-                    headerMap["oaid"] = androidId
-                } else {
-                    val currentTimestampMillis = System.currentTimeMillis()
-                    val currentTimestampSeconds: Long = currentTimestampMillis / 1000
-                    oaid = currentTimestampSeconds.toString()
-                    headerMap["oaid"] = currentTimestampSeconds.toString()
                 }
+                if (TextUtils.isEmpty(oaid)) {
+                    oaid = time
+                }
+                headerMap["oaid"] = oaid
             }
 
             headerMap["sid"] = BaseApp.context.storeid.toString() //应用市场
 
             val params = mutableMapOf<String, String>()
             params["aid"] = BaseApp.context.app_id
-            params["oaid"] = oaid.toString()
+            if (oaid != null) {
+                params["oaid"] = oaid
+            }
             params["sid"] = BaseApp.context.storeid
             params["t"] = time.toString()
             params["v"] = BaseApp.context.version
