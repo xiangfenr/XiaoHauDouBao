@@ -68,8 +68,10 @@ class HeadersInterceptor : Interceptor {
                 val androidId = MmkvUtil.getInstance().decodeString("androidId")
 
                 // OAID 属于个人信息，仅本部接口携带；
-                // 带 urlname 标记的合作方（魔力等）请求一律不下发，且不参与签名。
-                val isPartnerRequest = !TextUtils.isEmpty(original.header("urlname"))
+                // 魔力合作方域名（cdjywh）请求一律不下发，且不参与签名。
+                // 注意：OkBuilder 中 MoreBaseUrlInterceptor 先于本拦截器执行，
+                // urlname 标记此时已被移除，必须按最终请求 URL 判断。
+                val isPartnerRequest = original.url.toString().contains("cdjywh")
                 var oaid: String? = null
                 if (!isPartnerRequest) {
                     oaid = MmkvUtil.getInstance().decodeString("oaid")
