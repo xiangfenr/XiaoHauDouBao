@@ -27,20 +27,19 @@ class HeadersInterceptor : Interceptor {
         val builder = original.newBuilder()
         headerMap.putAll(commonHeaders)
         try {
-            headerMap["v"] = BaseApp.context.version
-            headerMap["aid"] = BaseApp.context.app_id
-            val time = (System.currentTimeMillis() / 1000).toString()
-            headerMap["t"] = time
-            val androidId = MmkvUtil.getInstance().decodeString("androidId")
-
-            // OAID 属于个人信息，仅本部接口携带；
-            // 魔力合作方域名（cdjywh）请求一律不下发，且不参与签名。
+            // 魔力合作方域名（cdjywh）请求不使用本部任何请求头（v/aid/t/sid/sign/oaid）。
             // 注意：OkBuilder 中 MoreBaseUrlInterceptor 先于本拦截器执行，
             // urlname 标记此时已被移除，必须按最终请求 URL 判断。
             val isPartnerRequest = original.url.toString().contains("cdjywh")
-            var oaid: String? = null
+
             if (!isPartnerRequest) {
-                oaid = MmkvUtil.getInstance().decodeString("oaid")
+                headerMap["v"] = BaseApp.context.version
+                headerMap["aid"] = BaseApp.context.app_id
+                val time = (System.currentTimeMillis() / 1000).toString()
+                headerMap["t"] = time
+                val androidId = MmkvUtil.getInstance().decodeString("androidId")
+
+                var oaid = MmkvUtil.getInstance().decodeString("oaid")
                 if (TextUtils.isEmpty(oaid)) {
                     oaid = androidId
                 }
@@ -48,33 +47,31 @@ class HeadersInterceptor : Interceptor {
                     oaid = time
                 }
                 headerMap["oaid"] = oaid
-            }
 
-            headerMap["sid"] = BaseApp.context.storeid.toString() //应用市场
+                headerMap["sid"] = BaseApp.context.storeid.toString() //应用市场
 
-            val params = mutableMapOf<String, String>()
-            params["aid"] = BaseApp.context.app_id
-            if (oaid != null) {
-                params["oaid"] = oaid
-            }
-            params["sid"] = BaseApp.context.storeid
-            params["t"] = time.toString()
-            params["v"] = BaseApp.context.version
-            val sortedMap = params.toSortedMap()
-            val sb = StringBuilder()
-            sortedMap.forEach { (key, value) ->
-                if (sb.isNotEmpty()) sb.append("&")
-                sb.append(key)
-                    .append("=")
-                    .append(URLEncoder.encode(value, "UTF-8"))
-            }
-            val secret = "y1sHeng"
-            sb.append(secret)
-            val signStr = sb.toString()
-            // 生成签名
-            val sign = SHA256.encryptMD5(SHA256.encryptMD5(signStr))
+                val params = mutableMapOf<String, String>()
+                params["aid"] = BaseApp.context.app_id
+                params["oaid"] = oaid.toString()
+                params["sid"] = BaseApp.context.storeid
+                params["t"] = time.toString()
+                params["v"] = BaseApp.context.version
+                val sortedMap = params.toSortedMap()
+                val sb = StringBuilder()
+                sortedMap.forEach { (key, value) ->
+                    if (sb.isNotEmpty()) sb.append("&")
+                    sb.append(key)
+                        .append("=")
+                        .append(URLEncoder.encode(value, "UTF-8"))
+                }
+                val secret = "y1sHeng"
+                sb.append(secret)
+                val signStr = sb.toString()
+                // 生成签名
+                val sign = SHA256.encryptMD5(SHA256.encryptMD5(signStr))
 
-            headerMap["sign"] = sign
+                headerMap["sign"] = sign
+            }
 
             val partner_id = MmkvUtil.getInstance().decodeInt("partner_id")
             val token = MmkvUtil.getInstance().decodeString("token")
